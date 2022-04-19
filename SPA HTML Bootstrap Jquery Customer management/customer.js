@@ -39,13 +39,17 @@ function addCustomer() {
     let rePassword = document.getElementById("rePassword").value;
     let phone = document.getElementById("phone").value;
     let address = document.getElementById("address").value;
-    if (password != rePassword) {
-        alert("Password khong dung !")
+    let rong = "";
+
+    if ((name || email || password || rePassword || phone || address ) == rong ) {
+        alert("fields cannot be empty");
+    } else if (password != rePassword) {
+        alert("Re-entered password does not match");
     } else {
-        let size = customers.length
-        customers[size] = [size + 1, name, email, password, phone, address,true]
-        onLoadPage()
-        reset()
+        let size = customers.length;
+        customers[size] = [size + 1, name, email, password, phone, address,true];
+        onLoadPage();
+        reset();
     }
 }
 
@@ -68,6 +72,7 @@ function editCustomer(clicker_id) {
     document.getElementById("addressUp").value = customer[5]
 }
 
+
 function updateCustomer() {
     let id = document.getElementById("idUp").value
     let index = id - 1
@@ -78,6 +83,7 @@ function updateCustomer() {
     onLoadPage()
 
 }
+
 
 function deleteCustomer(clicker_id) {
     let num = parseInt((clicker_id).replace("deleteCustomer", ""))
