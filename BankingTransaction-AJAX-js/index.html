@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./customer.js"></script>
-    <script src="./app.js"></script>
-    <script src="./js/jquery.validate.js"></script>
     <script src="./js/jquery.validate.min.js"></script>
 </head>
 
@@ -30,7 +27,7 @@
                         <i class="fa-solid fa-plus"></i>
                         <span>Add New Customer</span>
                     </button>
-                    <a href="#" class="btn btn-outline-light">
+                    <a href="/transfers" class="btn btn-outline-light">
                         <i class="fa fa-history" aria-hidden="true"></i>
                         <span>Transfer money Information</span>
                     </a>
@@ -61,7 +58,7 @@
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create Customer</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Create</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -79,7 +76,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="phone" class="form-label">Phone</label>
-                                <input type="number" class="form-control" id="phone">
+                                <input type="tel" class="form-control" id="phone">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="address" class="form-label">Address</label>
@@ -90,7 +87,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="btnCreate" class="btn btn-outline-primary">Create</button>
+                    <button type="button" class="btn btn-outline-primary">Create</button>
                 </div>
             </div>
         </div>
@@ -101,7 +98,7 @@
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Customer</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Update</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -119,7 +116,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="phoneUp" class="form-label">Phone</label>
-                                <input type="number" class="form-control" id="phoneUp">
+                                <input type="tel" class="form-control" id="phoneUp">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="addressUp" class="form-label">Address</label>
@@ -135,34 +132,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Delete -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabelDelete">Delete customer</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="idDelete">
-                    <div style="text-align: center;">
-                        <img src="/image/warming.svg" alt="waiting">
-                        <h3>Are you sure delete customer !</h3>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-outline-primary" data-bs-dismiss="modal"
-                       >Yes, delete it !
-                    </button>
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancle</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Deposit Modal -->
     <div class="modal fade" id="depositModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
@@ -180,8 +149,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-form-label">Customer ID</label>
                                     <div class="col-sm-12">
-                                        <input type="text" id="customerIdDep" name="customerIdDep" class="form-control"
-                                            readonly />
+                                        <input type="text" id="customerIdDep" name="customerIdDep" class="form-control" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -189,8 +157,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-form-label">Full Name</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" id="fullNameDep" name="fullNameDep"
-                                            readonly />
+                                        <input type="text" class="form-control" id="fullNameDep" name="fullNameDep" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -198,17 +165,15 @@
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-form-label">Current balance ($)</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control num-space" id="balanceDep"
-                                            name="balanceDep" readonly />
+                                        <input type="text" class="form-control num-space" id="balanceDep" name="balanceDep" readonly />
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <div class="form-group row">
-                                    <label for="transactionAmountDep" class="col-sm-12 col-form-label">Transaction Amount ($)</label>
+                                    <label class="col-sm-12 col-form-label">Transaction Amount ($)</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control num-space" id="transactionAmountDep"
-                                            name="transactionAmountDep" />
+                                        <input type="text" class="form-control num-space" id="transactionAmountDep" name="transactionAmountDep" />
                                     </div>
                                 </div>
                             </div>
@@ -226,15 +191,14 @@
         </div>
     </div>
 
-    <!-- Modal Withdraw -->
+    <!-- Withdraw Modal -->
     <div class="modal fade" id="withdrawModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" >Withdraw money into customer's account</h5>
+                    <h5 class="modal-title">Withdraw money from customer's balance</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
                 <div class="modal-body">
                     <div class="modal-alert-danger hide"></div>
                     <form id="frmWithdraw" method="post">
@@ -259,7 +223,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-form-label">Current balance ($)</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control num-space" id="currentBalanceWd" name="currentBalanceWd" readonly />
+                                        <input type="text" class="form-control num-space" id="balanceWd" name="balanceWd" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -278,82 +242,87 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" id="btnWithdrawMoney" class="btn btn-outline-warning">
                         <i class="fa fa-minus" aria-hidden="true"></i>
-                        Deposit
+                        Withdraw
                     </button>
                 </div>
             </div>
         </div>
-
     </div>
 
-
-    
-
-    <!-- Modal Transfer -->
-    <div class="modal fade" id="modalTransfer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <!-- Transfer Modal -->
+    <div id="transferModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Transfer money into customer's account</h5>
+                    <h5 class="modal-title">Transfer money Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="modal-alert-danger hide"></div>
+                    <form id="frmTransfer">
+                        <fieldset class="mt-3 g-3">
+                            <div class="form-group row">
+                                <div class="mb-3 col-md-4">
+                                    <label class="col-sm-12 col-form-label">Sender ID</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="senderIdTrf" name="senderIdTrf" readonly>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label class="col-sm-12 col-form-label">Sender Name</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="senderNameTrf" name="senderNameTrf" readonly>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label class="col-sm-12 col-form-label">Email</label>
+                                    <div class="col-sm-12">
+                                        <input type="email" class="form-control" id="emailTrf" name="emailTrf" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="mb-3 col-md-6">
+                                    <label class="col-sm-12 col-form-label">Sender balance</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control num-space" id="balanceTrf" name="balanceTrf" readonly>
+                                    </div>
+                                </div>
 
-                    <form id="frmTransfer" method="post">
-                        <fieldset class="row g-3">
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="senderID" class="form-label">Sender ID</label>
-                                    <input type="text" class="form-control" name="senderID" id="senderID" readonly>
-                                    
+                                <div class="mb-3 col-md-6">
+                                    <label class="col-sm-12 col-form-label">Recipient Name</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-select" id="recipientIdTrf" name="recipientIdTrf"></select>
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="senderName" class="form-label">Sender Name</label>
-                                    <input type="text" class="form-control" name="senderName" id="senderName" readonly>
+                            </div>
+                            <div class="form-group row">
+                                <div class="mb-3 col-md-4">
+                                    <label class="col-sm-12 col-form-label">Transfer Amount ($)</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control num-space" id="transferAmountTrf" name="transferAmountTrf">
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="senderEmail" class="form-label">Email</label>
-                                    <input type="text" class="form-control" name="senderEmail" id="senderEmail" readonly>
+                                <div class="mb-3 col-md-4">
+                                    <label class="col-sm-12 col-form-label">Fees (%)</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control num-space" id="feesTrf" name="feesTrf" value="10" readonly>
+                                    </div>
                                 </div>
-        
-        
-                                <div class="col-md-6">
-                                    <label for="senderBalance" class="form-label">Sender balance (VND)</label>
-                                    <input type="text" class="form-control" name="senderBalance" id="senderBalance" readonly>
-        
+                                <div class="mb-3 col-md-4">
+                                    <label class="col-sm-12 col-form-label">Total amount of transaction ($)</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control num-dot" id="transactionAmountTrf" name="transactionAmountTrf" readonly>
+                                    </div>
                                 </div>
-        
-                                <div class="col-md-6">
-                                    <label for="recipientName" class="form-label">Recipient Name</label>
-                                    <select class="form-select mb-3" id="recipientName" name="recipientName">
-                                        <option value="">Recipient Name</option>
-                                    </select>
-                                </div>
-        
-                                <div class="col-md-4">
-                                    <label for="transferAmount" class="form-label">Transfer Amount (VND)</label>
-                                    <input type="number" class="form-control" name="transferAmount" id="transferAmount">
-        
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="fees" class="form-label">Fees(%)</label>
-                                    <input type="text" class="form-control" name="fees" id="fees" value="10" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="totalTransactionAmount" class="form-label">Total amount of transaction</label>
-                                    <input type="text" class="form-control" name="totalTransactionAmount"
-                                        id="totalTransactionAmount" readonly>
-                                </div>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
-
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="btnTransferMoney" class="btn btn-outline-primary" data-bs-dismiss="modal" >
-                        <i class="fas fa-exchange-alt"></i>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btnTransferMoney" class="btn btn-outline-primary">
+                        <i class="fa fa-exchange" aria-hidden="true"></i>
                         Transfer
                     </button>
                 </div>
@@ -361,88 +330,24 @@
         </div>
     </div>
 
-    </div>
+
+    <script src="./js/app.js"></script>
 
     <script>
+
         let customer = new Customer();
+
+        let sender = new Sender();
+
+        let recipient = new Recipient();
+
         let deposit = new Deposit();
+
         let withdraw = new Withdraw();
+
         let transfer = new Transfer();
-        
 
-    function findById(id) {
-            return $.ajax({
-                headers: {
-                    "Content": "application/json",
-                    "Accept": "application/json"
-                },
-                url: "http://localhost:3000/customers/" + id,
-                success: function (data) {
-                    customer = data;
-                },
-                error: function () {
-
-                }
-            })
-        }
-
-    function drawListCustomers(data) {
-            let str = `
-                <tr id="tr_${data.id}">
-                    <td>${data.id}</td>
-                    <td>${data.fullName}</td>
-                    <td>${data.email}</td>
-                    <td>${data.phone}</td>
-                    <td>${data.address}</td>
-                    <td>${data.balance}</td>
-                    <td>
-                        <button type="button" data-id="${data.id}" data-full-name="${data.fullName}" class="btn btn-outline-secondary btn-update">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
-                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-danger btn-delete" data-id="${data.id}"">
-                            <i class="fa-solid fa-ban"></i>
-                        </button>
-                    </td>
-                </tr>
-    `;
-
-            document.getElementById("tbCustomer").innerHTML += str;
-        }
-
-    function loadCustomers() {
-            return $.ajax({
-                headers: {
-                    "Content": "application/json",
-                    "Accept": "application/json"
-                },
-                url: "http://localhost:3000/customers",
-                success: function (data) {
-                    data.forEach(item => {
-                        drawListCustomers(item);
-                    });
-                }
-            })
-        }
-
-        // Update
-    function handlerShowUpdateModal() {
+        function handlerShowUpdateModal() {
             let btnUpdate = $(".btn-update");
 
             btnUpdate.on("click", function () {
@@ -461,93 +366,6 @@
             });
         }
 
-    function doUpdate() {
-
-        let customer = {
-            id: null,
-            fullName: $("#fullNameUp").val(),
-            email: $("#emailUp").val(),
-            phone: $("#phoneUp").val(),
-            address: $("#addressUp").val(),
-            balance: 0
-        }
-
-        $.ajax({
-            type: "PUT",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            url: "http://localhost:3000/customers/" + customer.id,
-            data: JSON.stringify(customer),
-            success: function (data) {
-                let str = `
-            <tr id="tr_${data.id}">
-                <td>${data.id}</td>
-                <td>${data.fullName}</td>
-                <td>${data.email}</td>
-                <td>${data.phone}</td>
-                <td>${data.address}</td>
-                <td>${data.balance}</td>
-                <td>
-                    <button type="button" data-id="${data.id}" data-full-name="${data.fullName}" class="btn btn-outline-secondary btn-update">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
-                        <i class="fa-solid fa-minus"></i>
-                    </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                    </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-outline-danger btn-delete" data-id="${data.id}"">
-                        <i class="fa-solid fa-ban"></i>
-                    </button>
-                </td>
-            </tr>
-        `;
-
-                let currentRow = $("#tr_" + data.id);
-                currentRow.replaceWith(str);
-
-                $("#updateModal").modal("hide");
-
-                handlerShowUpdateModal();
-            }
-        })
-        }
-
-        $("#btnUpdate").on("click", function () {
-            doUpdate();
-        });
-
-
-        // delete
-        function handlerShowDeleteModal() {
-            let btnDelete = $(".btn-delete");
-
-            btnDelete.on("click", function() {
-                let id = $(this).data("id");
-
-                findById(id).then(function() {
-                    $("#deleteModal").modal("show");
-                }).catch(function () {
-                    alert("Customer not found");
-                }) 
-            })
-        }
-
-        // deposit
         function handlerShowDepositModal() {
             let btnDeposit = $(".btn-deposit");
 
@@ -567,36 +385,65 @@
             })
         }
 
-        function doDeposit() {
+        function handlerShowWithdrawModal() {
+            let btnWithdraw = $(".btn-withdraw");
+            
+            btnWithdraw.on("click", function () {
+                let id = $(this).data("id");
 
-            deposit.customerId = customer.id;
-            deposit.transactionAmount = +$("#transactionAmountDep").val();
+                findById(id).then(function () {
+                    $("#customerIdWd").val(customer.id);
+                    $("#fullNameWd").val(customer.fullName);
+                    $("#balanceWd").val(customer.balance);
 
-            customer.balance += +deposit.transactionAmount;
+                    $("#withdrawModal").modal("show");
+                }).catch(function () {
+                    alert("Customer not found!");
+                });
+            })
+        }
 
-            $.ajax({
-                type: "POST",
+        function handlerShowTransferModal() {
+            let btnTransfer = $(".btn-transfer");
+            
+            btnTransfer.on("click", function () {
+                let id = $(this).data("id");
+
+                findById(id).then(function () {
+                    sender = customer;
+                    $("#senderIdTrf").val(sender.id);
+                    $("#senderNameTrf").val(sender.fullName);
+                    $("#emailTrf").val(sender.email);
+                    $("#balanceTrf").val(sender.balance);
+
+                    drawListRecipients(sender.id);
+
+                    $("#transferModal").modal("show");
+                }).catch(function () {
+                    alert("Sender not found!");
+                });
+            })
+        }
+        
+        function findById(id) {
+            return $.ajax({
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    "Content": "application/json",
+                    "Accept": "application/json"
                 },
-                url: "http://localhost:3000/deposits",
-                data: JSON.stringify(deposit),
-                success: function () {
-
-                }
-            });
-
-            $.ajax({
-                type: "PUT",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                url: "http://localhost:3000/customers/" + customer.id,
-                data: JSON.stringify(customer),
+                url: "http://localhost:3000/customers/" + id,
                 success: function (data) {
-                    let str = `
+                    customer = data;
+                },
+                error: function () {
+                    
+                }
+            })
+        }
+
+        function drawListCustomers(data) {
+            let str;
+            str = `
                 <tr id="tr_${data.id}">
                     <td>${data.id}</td>
                     <td>${data.fullName}</td>
@@ -605,7 +452,7 @@
                     <td>${data.address}</td>
                     <td>${data.balance}</td>
                     <td>
-                        <button type="button" data-id="${data.id}" data-full-name="${data.fullName}" class="btn btn-outline-secondary btn-update">
+                        <button type="button" class="btn btn-outline-secondary btn-update" data-id="${data.id}">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
                     </td>
@@ -625,12 +472,179 @@
                         </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-outline-danger btn-delete" data-id="${data.id}"">
+                        <button type="button" class="btn btn-outline-danger">
                             <i class="fa-solid fa-ban"></i>
                         </button>
                     </td>
                 </tr>
             `;
+
+            document.getElementById("tbCustomer").innerHTML += str;
+        }
+
+        function drawListRecipients(senderId) {
+            $.ajax({
+                url: "http://localhost:3000/customers",
+                success: function (recipients) {
+                    $("#recipientIdTrf").empty();
+
+                    recipients.forEach(item => {
+                        if (item.id != senderId) {
+                            let str = `
+                                <option value="${item.id}">(${item.id}) ${item.fullName}</option>
+                            `;
+
+                            $("#recipientIdTrf").append(str);
+                        }
+                    });
+                },
+                error: function () {
+                    
+                }
+            })
+        }
+
+        function loadCustomers() {
+            return $.ajax({
+                headers: {
+                    "Content": "application/json",
+                    "Accept": "application/json"
+                },
+                url: "http://localhost:3000/customers",
+                success: function (data) {
+                    data.forEach(item => {
+                        drawListCustomers(item);
+                    });
+                }
+            })
+        }
+
+        function doUpdate() {
+
+            customer.fullName = $("#fullNameUp").val();
+            customer.email = $("#emailUp").val();
+            customer.phone = $("#phoneUp").val();
+            customer.address = $("#addressUp").val();
+
+            $.ajax({
+                type: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:3000/customers/" + customer.id,
+                data: JSON.stringify(customer),
+                success: function(data) {
+                    let str = `
+                        <tr id="tr_${data.id}">
+                            <td>${data.id}</td>
+                            <td>${data.fullName}</td>
+                            <td>${data.email}</td>
+                            <td>${data.phone}</td>
+                            <td>${data.address}</td>
+                            <td>${data.balance}</td>
+                            <td>
+                                <button type="button" data-id="${data.id}" data-full-name="${data.fullName}" class="btn btn-outline-secondary btn-update">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+
+                    let currentRow = $("#tr_" + data.id);
+                    currentRow.replaceWith(str);
+
+                    $("#updateModal").modal("hide");
+
+                    handlerShowUpdateModal();
+                }
+            })
+        }
+
+        function doDeposit() {
+
+            deposit.customerId = customer.id;
+            deposit.transactionAmount = +$("#transactionAmountDep").val();
+
+            customer.balance += +deposit.transactionAmount;
+
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:3000/deposits",
+                data: JSON.stringify(deposit),
+                success: function() {
+                    
+                }
+            });
+        
+            $.ajax({
+                type: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:3000/customers/" + customer.id,
+                data: JSON.stringify(customer),
+                success: function(data) {
+                    let str = `
+                        <tr id="tr_${data.id}">
+                            <td>${data.id}</td>
+                            <td>${data.fullName}</td>
+                            <td>${data.email}</td>
+                            <td>${data.phone}</td>
+                            <td>${data.address}</td>
+                            <td>${data.balance}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary btn-update" data-id="${data.id}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
 
                     let currentRow = $("#tr_" + data.id);
                     currentRow.replaceWith(str);
@@ -640,21 +654,309 @@
                     handlerShowUpdateModal();
 
                     handlerShowDepositModal();
+
+                    handlerShowWithdrawModal();
+
+                    handlerShowTransferModal();
                 }
             });
         }
 
-        $("#btnDepositMoney").on("click", function () {
+        function doWithdraw() {
+            
+            withdraw.customerId = customer.id;
+            withdraw.transactionAmount = +$("#transactionAmountWd").val();
+            
+            if (withdraw.transactionAmount > customer.balance) {
+                alert("Error for max withdraw")
+            }
+            else {
+                customer.balance -= +withdraw.transactionAmount;
 
+                $.ajax({
+                    type: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    url: "http://localhost:3000/withdraws",
+                    data: JSON.stringify(withdraw),
+                    success: function() {
+                        
+                    }
+                });
+
+                $.ajax({
+                    type: "PUT",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    url: "http://localhost:3000/customers/" + customer.id,
+                    data: JSON.stringify(customer),
+                    success: function(data) {
+                        let str = `
+                            <tr id="tr_${data.id}">
+                                <td>${data.id}</td>
+                                <td>${data.fullName}</td>
+                                <td>${data.email}</td>
+                                <td>${data.phone}</td>
+                                <td>${data.address}</td>
+                                <td>${data.balance}</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-secondary btn-update" data-id="${data.id}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
+                                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+
+                        let currentRow = $("#tr_" + data.id);
+                        currentRow.replaceWith(str);
+
+                        $("#withdrawModal").modal("hide");
+
+                        handlerShowUpdateModal();
+
+                        handlerShowDepositModal();
+
+                        handlerShowWithdrawModal();
+
+                        handlerShowTransferModal();
+                    }
+                });
+            }
+        }
+
+        function doTransfer(transfer) {
+            return $.ajax({
+                type: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:3000/transfers",
+                data: JSON.stringify(transfer),
+                success: function() {
+                    
+                }
+            });
+        }
+        
+        function updateSender(sender) {
+            return $.ajax({
+                type: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:3000/customers/" + sender.id,
+                data: JSON.stringify(sender),
+                success: function(data) {
+                    let str = `
+                        <tr id="tr_${data.id}">
+                            <td>${data.id}</td>
+                            <td>${data.fullName}</td>
+                            <td>${data.email}</td>
+                            <td>${data.phone}</td>
+                            <td>${data.address}</td>
+                            <td>${data.balance}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary btn-update" data-id="${data.id}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+
+                        let currentRow = $("#tr_" + data.id);
+                        currentRow.replaceWith(str);
+                }
+            });
+        }
+
+        function updateRecipient(recipient) {
+            return $.ajax({
+                type: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:3000/customers/" + recipient.id,
+                data: JSON.stringify(recipient),
+                success: function(data) {
+                    let str = `
+                        <tr id="tr_${data.id}">
+                            <td>${data.id}</td>
+                            <td>${data.fullName}</td>
+                            <td>${data.email}</td>
+                            <td>${data.phone}</td>
+                            <td>${data.address}</td>
+                            <td>${data.balance}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary btn-update" data-id="${data.id}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+
+                    let currentRow = $("#tr_" + data.id);
+                    currentRow.replaceWith(str);
+                }
+            });
+        }
+
+        function handlerTransfer() {
+            let transferAmount = +$("#transferAmountTrf").val();
+            let fees = 10;
+            let feesAmount = transferAmount / fees;
+            let transactionAmount = transferAmount + feesAmount;
+
+            if (transactionAmount > sender.balance) {
+                alert("Customer balance not enough money to transfer");
+            }
+            else {
+                sender.balance -= transactionAmount;
+
+                updateSender(sender).then(function () {
+                    let recipientId = $("#recipientIdTrf").val();
+
+                    findById(recipientId).then(function () {
+                        recipient = customer;
+
+                        recipient.balance += transferAmount;
+
+                        updateRecipient(recipient).then(function () {
+                            transfer.senderId = sender.id;
+                            transfer.recipientId = recipient.id;
+                            transfer.transferAmount = transferAmount;
+                            transfer.fees = 10;
+                            transfer.feesAmount = feesAmount;
+                            transfer.transactionAmount = transactionAmount;
+                            
+                            doTransfer(transfer).then(function () {
+                                $("#transferModal").modal("hide");
+
+                                handlerShowUpdateModal();
+
+                                handlerShowDepositModal();
+
+                                handlerShowWithdrawModal();
+
+                                handlerShowTransferModal();
+                            })
+                        })
+                    }); 
+                })
+            }
+        }
+
+
+        $("#btnUpdate").on("click", function () {
+            doUpdate();
+        });
+
+        $("#btnDepositMoney").on("click", function () {
             $("#frmDeposit").submit();
         });
 
+        $("#btnWithdrawMoney").on("click", function () {
+            $("#frmWithdraw").submit();
+        });
+        
+        $("#btnTransferMoney").on("click", function () {
+            $("#frmTransfer").submit();
+        });
+
+        $("#transferAmountTrf").on("input", function () {
+            let transferAmount = +$(this).val();
+            let fees = 10;
+            let feesAmount = transferAmount / fees;
+            let transactionAmount = transferAmount + feesAmount;
+
+            $("#transactionAmountTrf").val(transactionAmount);
+        })
+        
 
         $("#depositModal").on("hidden.bs.modal", function () {
             $('#frmDeposit')[0].reset();
             $('#frmDeposit').validate().resetForm();
-            $("input.error").removeClass("error");
+            $("#frmDeposit input.error").removeClass("error");
         });
+
+        $("#withdrawModal").on("hidden.bs.modal", function () {
+            $('#frmWithdraw')[0].reset();
+            $('#frmWithdraw').validate().resetForm();
+            $("#frmWithdraw input.error").removeClass("error");
+        });
+
+        $("#transferModal").on("hidden.bs.modal", function () {
+            $('#frmTransfer')[0].reset();
+            $('#frmTransfer').validate().resetForm();
+            $("#frmTransfer input.error").removeClass("error");
+        });
+
 
         $("#frmDeposit").validate({
             rules: {
@@ -671,261 +973,52 @@
                     max: "Transaction amount max is 10.000.000.000"
                 }
             },
-            submitHandler: function () {
+            submitHandler: function() {
                 doDeposit();
             }
         });
 
-
-        //withdraw
-        function handlerShowWithdrawModal() {
-
-            let btnWithdraw = $(".btn-withdraw");
-
-            btnWithdraw.on("click", function () {
-                let id = $(this).data("id");
-
-                findById(id).then(function () {
-                    $("#customerIdWd").val(customer.id);
-                    $("#fullNameWd").val(customer.fullName);
-                    $("#currentBalanceWd").val(customer.balance);
-
-                    $("#withdrawModal").modal("show");
-                }).catch(function () {
-                    alert("Customer not found");
-                })
-            })
-        }
-
-        function doWithdraw() {
-
-            withdraw.customerId = customer.id;
-            withdraw.transactionAmount = +$("#transactionAmountWd").val();
-
-            customer.balance -= withdraw.transactionAmount;
-
-            $.ajax({
-                type: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                url: "http://localhost:3000/withdraws",
-                data: JSON.stringify(withdraw),
-                success: function () {
-
-                }
-            });
-
-            $.ajax({
-                type: "PUT",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                url: "http://localhost:3000/customers/" + customer.id,
-                data: JSON.stringify(customer),
-                success: function (data) {
-                    let str =
-                        `
-                        <tr id="tr_${data.id}">
-                            <td>${data.id}</td>
-                            <td>${data.fullName}</td>
-                            <td>${data.email}</td>
-                            <td>${data.phone}</td>
-                            <td>${data.address}</td>
-                            <td>${data.balance}</td>
-                            <td>
-                                <button type="button" data-id="${data.id}" data-full-name="${data.fullName}" class="btn btn-outline-secondary btn-update">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
-                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-danger btn-delete" data-id="${data.id}"">
-                                    <i class="fa-solid fa-ban"></i>
-                                </button>
-                            </td>
-                        </tr>
-            `;
-
-                    let currentRow = $("#tr_" + data.id);
-                    currentRow.replaceWith(str);
-
-                    $("#withdrawModal").modal("hide");
-
-                    handlerShowUpdateModal();
-
-                    handlerShowWithdrawModal();
-                }
-            })
-        }
-
-        $("#btnWithdrawMoney").on("click", function () {
-
-            $("#frmWithdraw").submit();
-        });
-
-        $("#withdrawModal").on("hidden.bs.modal",function() {
-            $('#frmWithdraw')[0].reset();
-            $('#frmWithdraw').validate().resetForm();
-            $("input.error").removeClass("error");
-        })
-        
         $("#frmWithdraw").validate({
             rules: {
                 transactionAmountWd: {
                     required: true,
-                    min : 50,
-                    max : 10000000000
+                    min: 50,
+                    max: 10000000000
                 }
             },
             messages: {
                 transactionAmountWd: {
                     required: "Transaction amount is required",
                     min: "Transaction amount min is 50",
-                    max : "Transaction amount max 10.000.000.000"
+                    max: "Transaction amount max is 10.000.000.000"
                 }
             },
             submitHandler: function() {
                 doWithdraw();
             }
-        })
+        });
 
-        // transfer
-        function handlerShowTransferModal() {
-            let btnTransfer = $(".btn-transfer");
-            let evenOnchange = $("#transferAmount");
+        $("#frmTransfer").validate({
+            rules: {
+                transferAmountTrf: {
+                    required: true,
+                    min: 50,
+                    max: 10000000000
+                }
+            },
+            messages: {
+                transferAmountTrf: {
+                    required: "Transfer amount is required",
+                    min: "Transfer amount min is {0}",
+                    max: "Transfer amount max is 10.000.000.000"
+                }
+            },
+            submitHandler: function() {
+                handlerTransfer();
+            }
+        });
 
-            btnTransfer.on("click", function() {
-                let id = $(this).data("id");
 
-                findById(id).then(function() {
-             
-                    $("#senderID").val(customer.id);
-                    $("#senderName").val(customer.fullName);
-                    $("#senderEmail").val(customer.email);
-                    $("#senderBalance").val(customer.balance);
-                   
-                    evenOnchange.keyup(function () {
-                        $("#totalTransactionAmount").val(Math.floor(+$("#transferAmount").val() + (+$("#transferAmount").val()/ 10)));
-                    })
-
-                    $.ajax({
-                        headers: {
-                            "Content": "application/json",
-                            "Accept": "application/json"
-                        },
-                        url: "http://localhost:3000/customers",
-                        success: function (data) {
-                            let recipients = [];
-                            recipients = data;
-
-                            $("#recipientName").empty();
-
-                            recipients.forEach(item => {
-                                if (item.id != customer.id) {
-                                    let str = 
-                                    `
-                                    <option value="${item.id}">(${item.id}) ${item.fullName}</option>
-                                    `;
-                                    $("#recipientName").append(str);
-                                }
-                            })
-                        }
-
-                    })
-                    $("#modalTransfer").modal("show");
-                }).catch(function() {
-                    alert("Customer not found");
-                })
-            })
-        }
-
-        function doTransfer() {
-
-            transfer.senderId = customer.id;
-            let customer_sender = transfer.senderId;
-    
-            let recipientId = $("#recipientName").val().id;
-            transfer.fees = 10;
-            transfer.transferAmount = +$("#transferAmount").val();
-            transfer.feesAmount = transfer.transactionAmount / transfer.fees;
-            transfer.transactionAmount = +$("#totalTransactionAmount").val();
-
-            customer.balance += +transfer.transactionAmount;
-            
-            $.ajax({
-                    type: "PUT",
-                    headers: {
-                        "Content": "application/json",
-                        "Accept": "application/json"
-                    },
-                    url: "http://localhost:3000/customers/" + customer.id,
-                    data: JSON.stringify(customer),
-                    success: function (data) {
-                        let str = `
-                        <tr id="tr_${data.id}">
-                            <td>${data.id}</td>
-                            <td>${data.fullName}</td>
-                            <td>${data.email}</td>
-                            <td>${data.phone}</td>
-                            <td>${data.address}</td>
-                            <td>${data.balance}</td>
-                            <td>
-                                <button type="button" data-id="${data.id}" data-full-name="${data.fullName}" class="btn btn-outline-secondary btn-update">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-success btn-deposit" data-id="${data.id}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-warning btn-withdraw" data-id="${data.id}">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-primary btn-transfer" data-id="${data.id}">
-                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-danger btn-delete" data-id="${data.id}"">
-                                    <i class="fa-solid fa-ban"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        `;
-
-                        let currentRow = $("#tr_" + data.id);
-                        currentRow.replaceWith(str);
-                        $("#modalTransfer").modal("hide");
-
-                        handlerShowUpdateModal();
-
-                        handlerShowWithdrawModal();
-                    }
-                    })
-        }
-
-        // sau khi load xong cus thì load event show modal
         loadCustomers().then(function () {
             handlerShowUpdateModal();
 
@@ -933,11 +1026,11 @@
 
             handlerShowWithdrawModal();
 
-            handlerShowDeleteModal();
-
             handlerShowTransferModal();
         });
+
     </script>
+
 </body>
 
 </html>

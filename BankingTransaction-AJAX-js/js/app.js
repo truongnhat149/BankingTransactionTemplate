@@ -9,6 +9,18 @@ class Customer {
     }
 }
 
+class Sender extends Customer {
+    constructor() {
+        super()
+    }
+}
+
+class Recipient extends Customer {
+    constructor() {
+        super()
+    }
+}
+
 class Deposit {
     constructor(id, customerId, transactionAmount) {
         this.id = id;
@@ -35,5 +47,4 @@ class Transfer {
         this.feesAmount = feesAmount;
         this.transactionAmount = transactionAmount;
     }
-    
 }
